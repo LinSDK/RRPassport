@@ -9,13 +9,21 @@
             0% {opacity:0; padding-top:50px;}
             100% {opacity:1; padding-top:0px;}
         }
+
+        @keyframes reign {
+            0% {opacity: 0; padding-top:50px;}
+            30% {opacity: 0; padding-top:50px;}
+            100% {opacity: 1; padding-top:0px;}
+        }
+        
         #qrbase {
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 100vh;
             animation: qrcode 3s ease;
-        } 
+            margin-top: 50px;
+        }
 
         #rrlogo {
             display: inline-block;
@@ -26,6 +34,13 @@
         .qrid {
             padding-bottom: 50px;
             color: #fcd15a;
+        }
+
+        #reignsup {
+            position:absolute;
+            top: 450px;
+            width: 20%;
+            animation: reign 2s ease;
         }
 
         @font-face {
@@ -44,6 +59,7 @@
 <body> 
     <div id="qrbase">
         <image id="rrlogo" src="assets/rr white.png" />
+        <image id="reignsup" src="assets/rs.png" />
         <div id="qrcode"></div>
         <div class="qrid">id # 000001 Name of Owner</div>
         <div class="quest">⬜Quest 1: Do this quest</div>
@@ -54,7 +70,7 @@
         <div class="quest">⬜Quest 6: Do this quest</div>
         <div class="quest">⬜Quest 7: Do this quest</div>
         <div class="quest">⬜Quest 8: Do this quest</div>
-        <div class="qrid">DO NOT lose this page! If lost, can not be recovered</div>
+        <div class="qrid">beta 0.1</div>
     </div>
 
     <script>

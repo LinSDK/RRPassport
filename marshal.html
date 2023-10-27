@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RR Passport [ESGS 2023] - Marshal Dashboard</title>
+    <style>
+        @keyframes qrcode {
+            0% {opacity:0; padding-top:50px;}
+            100% {opacity:1; padding-top:0px;}
+        }
+        
+        #qrbase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            animation: qrcode 3s ease;
+            margin-top: 50px;
+        } 
+
+        #rrlogo {
+            display: inline-block;
+            padding-bottom: 50px;
+            width: 30%;
+        }
+
+        .qrid {
+            padding-bottom: 50px;
+            color: #fcd15a;
+        }
+
+        #idName {
+            background-color: #545454;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #idNumber {
+            background-color: #545454;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #finishButton {
+            background-color: #545454;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .questbox{
+            background-color: #545454;
+            height: 40px;
+            width: 40px;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        @font-face {
+            font-family: 'Barlow Condensed Medium';
+            src: URL('BarlowCondensed-Medium.ttf') format('truetype');
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="qrbase">
+        <image id="rrlogo" src="assets/rr white.png" />
+        <div class="quest">Marshal Dashboard</div>
+        <input type="text" id="idNumber" placeholder="000001" disabled />
+        <input type="text" id="idName" placeholder="Ran-Kun" />
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 1</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 2</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 3</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 4</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 5</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 6</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 7</label>
+        <label><input class="questbox" type="checkbox" name="checkbox" value="value">Quest 8</label>
+        <input type="button" id="finishButton" value="Finish"/>
+        <div class="qrid">This dashboard is for editing RR Passports</div>
+    </div>
+
+    <script>
+        // Get the current URL
+        var url = window.location.href;
+
+        // Create a QR code with the URL
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: url,
+            width: 512,
+            height: 512,
+            colorDark: "#D11F1F", // Set the color to blue
+            colorLight: "#000000",
+            correctLevel: QRCode.CorrectLevel.H // Set error correction to High
+        });
+    </script>
+</body>
+</html>
