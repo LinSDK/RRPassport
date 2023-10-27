@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RR Passport [ESGS 2023]</title>
+    <script src="js/qrcode.min.js"></script>
+    <style>
+        @keyframes qrcode {
+            0% {opacity:0; padding-top:50px;}
+            100% {opacity:1; padding-top:0px;}
+        }
+        #qrbase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            animation: qrcode 3s ease;
+        } 
+
+        #rrlogo {
+            display: inline-block;
+            padding-bottom: 50px;
+            width: 30%;
+        }
+
+        .qrid {
+            padding-bottom: 50px;
+            color: #fcd15a;
+        }
+
+        @font-face {
+            font-family: 'Barlow Condensed Medium';
+            src: URL('BarlowCondensed-Medium.ttf') format('truetype');
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Barlow Condensed Medium';
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="qrbase">
+        <image id="rrlogo" src="assets/rr white.png" />
+        <div id="qrcode"></div>
+        <div class="qrid">id # 000001 Name of Owner</div>
+        <div class="quest">⬜Quest 1: Do this quest</div>
+        <div class="quest">⬜Quest 2: Do this quest</div>
+        <div class="quest">⬜Quest 3: Do this quest</div>
+        <div class="quest">⬜Quest 4: Do this quest</div>
+        <div class="quest">⬜Quest 5: Do this quest</div>
+        <div class="quest">⬜Quest 6: Do this quest</div>
+        <div class="quest">⬜Quest 7: Do this quest</div>
+        <div class="quest">⬜Quest 8: Do this quest</div>
+        <div class="qrid">DO NOT lose this page! If lost, can not be recovered</div>
+    </div>
+
+    <script>
+        // Get the current URL
+        var url = window.location.href;
+
+        // Create a QR code with the URL
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: url,
+            width: 512,
+            height: 512,
+            colorDark: "#D11F1F", // Set the color to blue
+            colorLight: "#000000",
+            correctLevel: QRCode.CorrectLevel.H // Set error correction to High
+        });
+    </script>
+</body>
+</html>
